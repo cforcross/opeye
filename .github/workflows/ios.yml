@@ -22,8 +22,11 @@ jobs:
       with:
         # flutter-version: '2.14.0'
         channel: 'stable' # 'dev', 'alpha', 'master', default to: 'stable'
-        flutter-version: '2.14.0' # you can also specify exact version of flutter
-        # - run: flutter --version
+        # flutter-version: '2.14.0' # you can also specify exact version of flutter
+        # - run: flutter --version flutter pub upgrade
+
+    - name: flutter upgrade packages
+      run: flutter pub upgrade
 
     - name: Get pub dependencies
       run: flutter pub get
