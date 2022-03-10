@@ -23,7 +23,7 @@ jobs:
     - name: Set up Flutter
       uses: subosito/flutter-action@v1.4.0
       with:
-        channel: 'stable' # 'dev', 'alpha', 'master', default to: 'stable'
+        channel: 'dev' # 'dev', 'alpha', 'master', default to: 'stable'
         # flutter-version: '1.22.x' # you can also specify exact version of flutter
 
     - name: Get pub dependencies
