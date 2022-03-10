@@ -1,0 +1,33 @@
+name: Flutter CI IOS
+
+# This workflow is triggered on pushes to the repository.
+on:
+  push: 
+    branches: [ main ] # This will trigger the workflow on every push to the main branch
+  pull_request:
+    branches: [ main ] # Add this trigger to run this workflow on PR's to the main branch
+  workflow_dispatch: # to manually run this workflow
+        
+jobs:
+  code-analysis-and-testing:
+    name: Code analysis and testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v1.4.0
+      with:
+        channel: 'stable' # 'dev', 'alpha', 'master', default to: 'stable'
+        # flutter-version: '1.22.x' # you can also specify exact version of flutter
+
+    - name: Get pub dependencies
+      run: flutter pub get
+
+    - name: Flutter analyze
+      run: flutter analyze
+
+    - name: Flutter test
+      run: flutter test
