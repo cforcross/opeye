@@ -21,7 +21,7 @@ jobs:
       uses: dart-lang/setup-dart@v1 
 
     - name: Set up Flutter
-      uses: subosito/flutter-action@v1.4.0
+      uses: subosito/flutter-action@v2
       with:
         channel: 'alpha' # 'dev', 'alpha', 'master', default to: 'stable'
         # flutter-version: '2.10.3' # you can also specify exact version of flutter
