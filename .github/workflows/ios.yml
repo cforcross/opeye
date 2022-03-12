@@ -31,12 +31,12 @@ jobs:
       run: flutter pub get
     
     - name: Upload artifact to Github
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
         name: release-apk
-        path: build/app/outputs/apk/release/app-release.apk
+        path: path/**/[abc]rtifac?/*.apk
 
-    # - name: Flutter analyze
+    # - name: Flutter analyze path/**/[abc]rtifac?/*
     #   run: flutter analyze
 
     # - name: Flutter test
